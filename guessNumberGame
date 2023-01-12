@@ -1,0 +1,48 @@
+#calc a number between 1 - 100
+#ask for a number 1-100
+#say if too high/low
+#count num guesses
+#say game over, it was X after 6
+
+import random
+
+def numValidate():
+    global guessNum
+    global numRange
+    while guessNum <= 0 or guessNum > numRange:
+        print('Out of Range - try again!')
+        guessNum = int(input())
+
+
+def numCheck():
+    global guessNum
+    global numRange
+    if guessNum == numRange:
+        print('you win! Guess Count: ' + str(guessCount))
+    else:
+        guessCount = guessCount + 1
+        print('Guess again! Attempt: ' + str(guessCount))
+        guessNum = input()
+
+def askNum():
+    print('Guess a number between 1 and ' + str(numRange))
+    guessNum = int(input())
+
+print('pick the max number range')
+numRange = int(input())
+
+magicNumber = random.randint(1,numRange)
+guessCount = 0
+
+
+
+numValidate()
+
+numCheck()
+
+
+print(guessNum)
+
+
+
+
