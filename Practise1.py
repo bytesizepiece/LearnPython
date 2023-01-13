@@ -1,23 +1,10 @@
-print('how many cats own?')
-numCats = input()
+animals = ['cat', 'bat', 'rat', 'frog', 'dog']
 
-try:
-    if int(numCats) >= 4:
-        print('thats a lot!')
-    else:
-        print('not many!')
+spam = ['bacon', 'eggs', 'beans']
 
-except ValueError:
-    print('not a number!')
+longList = ['cat', 'bat', 'rat'], ['bacon', 'eggs', 'beans']
 
 
-
-eggs = 10
-
-def spam(count):
-        global eggs
-        eggs = count + eggs
-
-spam(eggs)
-
-print(eggs)
+print(animals[0])
+print(spam[2])
+print(longList[-1])
