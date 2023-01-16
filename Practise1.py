@@ -1,10 +1,4 @@
-animals = ['cat', 'bat', 'rat', 'frog', 'dog']
+spam = ['hello', 'hi', 'howdy', ' hey']
 
-spam = ['bacon', 'eggs', 'beans']
-
-longList = ['cat', 'bat', 'rat'], ['bacon', 'eggs', 'beans']
-
-
-print(animals[0])
-print(spam[2])
-print(longList[-1])
+print(spam.index('hello'))
+#mthod name comes after the viable name, otherwise the same as a function.
