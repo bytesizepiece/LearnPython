@@ -1,4 +1,9 @@
-spam = ['hello', 'hi', 'howdy', ' hey']
+spam = 1
+print(spam)
 
-print(spam.index('hello'))
-#mthod name comes after the viable name, otherwise the same as a function.
+cheese = spam
+
+cheese = (str(cheese) + ', 2')
+
+print(cheese)
+print(spam)
