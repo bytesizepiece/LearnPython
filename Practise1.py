@@ -1,9 +1,13 @@
-spam = 1
-print(spam)
+import pprint
 
-cheese = spam
+message = 'It was a bright cold day in April, and the clocks were striking thirteen'
 
-cheese = (str(cheese) + ', 2')
+count = {}
 
-print(cheese)
-print(spam)
+for char in message.upper():
+    count.setdefault(char, 0)
+    count[char] +=1
+
+textstring = pprint.pformat(count)
+
+print(textstring)

@@ -12,8 +12,15 @@
 
 <body>
 
-<p>Enter Your Name:</p>
-<input placeholder='Name...' >
+<div class="nameEntry">
+
+    <p>Enter Your Name:</p>
+    <input placeholder='Name...' >
+
+    <button id="nameEntryButton" type="submit" py-click="addName()">Submit</button>
+    
+</div>
+
 
 <p>Pick a range 1 to ???</p>
 <input placeholder='Max range...' >
@@ -26,7 +33,7 @@
 
 
 <div class="grid_container">
-    <div class="grid_item grid_item1">1</div>
+    <div class="grid_item grid_item1"><py-script>print('hello')</py-script></div>
 
 
 </body>
