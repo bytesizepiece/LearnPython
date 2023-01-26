@@ -14,7 +14,6 @@ def formatMoveInput():
     playerMove = playerMoveLevel + playerMoveSide
 
 
-
 def makeYourMove():
     global playerMove
     print('Pick a move!')
@@ -30,15 +29,41 @@ def makeYourMove():
         print('Pick a different position!')
         playerMove = input()
         formatMoveInput()
-    else:
-        game[playerMove] = playerChoice
-        printBoard()
+
+    game[playerMove] = playerChoice
+    printBoard()
+
+    for gap in game:
+        while game[gap] == ' ':
+            checkWin(playerChoice)
+            makeYourMove()
 
 
 def checkWin(i):
     if game['topL'] == i and game['topM'] == i and game['topR'] == i:
-         print('you win!')
-
+        print('you win!')
+        exit()
+    elif game['midL'] == i and game['midM'] == i and game['midR'] == i:
+        print('you win!')
+        exit()
+    elif game['lowL'] == i and game['lowM'] == i and game['lowR'] == i:
+        print('you win!')
+        exit()
+    elif game['topL'] == i and game['midL'] == i and game['lowL'] == i:
+        print('you win!')
+        exit()
+    elif game['topM'] == i and game['midM'] == i and game['lowM'] == i:
+        print('you win!')
+        exit()
+    elif game['topR'] == i and game['midR'] == i and game['lowR'] == i:
+        print('you win!')
+        exit()
+    elif game['topL'] == i and game['midM'] == i and game['lowR'] == i:
+        print('you win!')
+        exit()
+    elif game['lowL'] == i and game['midM'] == i and game['topR'] == i:
+        print('you win!')
+        exit()
 
 
 game = {'topL': ' ', 'topM': ' ', 'topR': ' ', 'midL': ' ',
@@ -59,13 +84,12 @@ print('''Great, let's play''')
 
 printBoard()
 
-for gap in game:
-    while game[gap] == ' ':
-        checkWin(playerChoice)
-        makeYourMove()
+# for gap in game:
+#     while game[gap] == ' ':
+#         checkWin(playerChoice)
+makeYourMove()
 
 print('game over')
-
 
 
 # !!! function computer move
@@ -84,7 +108,6 @@ print('game over')
 # down right
 # diaganal lefttop
 # diaganal leftlow
-
 
 
 # if one space left, coputer defend position
