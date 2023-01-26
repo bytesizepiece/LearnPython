@@ -11,7 +11,6 @@ def printBoard():
     print(' ' + game['midL'] + ' | ' + game['midM'] + ' | ' + game['midR'])
     print('-----------')
     print(' ' + game['lowL'] + ' | ' + game['lowM'] + ' | ' + game['lowR'])
-    print()
 
 
 game = {'topL': ' ', 'topM': ' ', 'topR': ' ', 'midL': ' ',
@@ -39,12 +38,9 @@ print('''Great, let's play''')
 
 print(printBoard())
 
-print()
 print('Pick a move!')
 playerMove = input()
 
-
-def makeMove():
 
 
 while game.values(playerMove):
