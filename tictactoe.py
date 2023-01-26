@@ -1,9 +1,3 @@
-# ask do you want to play? Y or no?
-#  if X or O?
-# easy or hard??
-# draw a grid, assign key,value pairs to each space
-
-
 def printBoard():
     print()
     print(' ' + game['topL'] + ' | ' + game['topM'] + ' | ' + game['topR'])
@@ -13,17 +7,44 @@ def printBoard():
     print(' ' + game['lowL'] + ' | ' + game['lowM'] + ' | ' + game['lowR'])
 
 
+def formatMoveInput():
+    global playerMove
+    playerMoveLevel = playerMove[0:3].lower()
+    playerMoveSide = playerMove[3:4].upper()
+    playerMove = playerMoveLevel + playerMoveSide
+
+
+
+def makeYourMove():
+    global playerMove
+    print('Pick a move!')
+    playerMove = input()
+    formatMoveInput()
+
+    while playerMove not in game.keys():
+        print('Pick a valid move!')
+        playerMove = input()
+        formatMoveInput()
+
+    while game[playerMove] == 'X' or game[playerMove] == 'O':
+        print('Pick a different position!')
+        playerMove = input()
+        formatMoveInput()
+    else:
+        game[playerMove] = playerChoice
+        printBoard()
+
+
+def checkWin(i):
+    if game['topL'] == i and game['topM'] == i and game['topR'] == i:
+         print('you win!')
+
+
+
 game = {'topL': ' ', 'topM': ' ', 'topR': ' ', 'midL': ' ',
         'midM': ' ', 'midR': ' ', 'lowL': ' ', 'lowM': ' ', 'lowR': ' '}
 
 
-print('Would you like to play? Y or N')
-playInput = input().upper()
-
-if playInput != 'Y':
-    exit
-
-print()
 print('X goes first')
 print('Play as X or O?')
 playerChoice = input().upper()
@@ -36,13 +57,34 @@ while playerChoice != 'X' and playerChoice != 'O':
 print()
 print('''Great, let's play''')
 
-print(printBoard())
+printBoard()
 
-print('Pick a move!')
-playerMove = input()
+for gap in game:
+    while game[gap] == ' ':
+        checkWin(playerChoice)
+        makeYourMove()
+
+print('game over')
 
 
 
-while game.values(playerMove):
-    print('Pick a move!')
-    playerMove = input()
+# !!! function computer move
+# check board for space
+# if empty position, use it
+
+
+# check if game won
+# take input to check either x or o, then run function on:
+# check if 3 same on:
+# across top row
+# across mid row
+# across low row
+# down left
+# down mid
+# down right
+# diaganal lefttop
+# diaganal leftlow
+
+
+
+# if one space left, coputer defend position

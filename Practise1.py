@@ -1,13 +1,14 @@
-import pprint
 
-message = 'It was a bright cold day in April, and the clocks were striking thirteen'
+print('Pick a move!')
+playerMove = input()
+formatMoveInput()
 
-count = {}
+while playerMove not in game.keys():
+    print('Pick a valid move!')
+    playerMove = input()
+    formatMoveInput()
 
-for char in message.upper():
-    count.setdefault(char, 0)
-    count[char] +=1
-
-textstring = pprint.pformat(count)
-
-print(textstring)
+while game[playerMove] == 'X' or game[playerMove] == 'O':
+    print('Pick a different position!')
+    playerMove = input()
+    formatMoveInput()
