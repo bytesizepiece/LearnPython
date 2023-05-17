@@ -34,6 +34,7 @@ while balance > 0:
 
     print('---')
     print('---')
+    print('You guessed: ' + str(guess))
     print('Dice rolled: ' + str(diceRoll))
     print('---')
     print('---')

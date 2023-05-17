@@ -1,14 +1,5 @@
+import re
 
-print('Pick a move!')
-playerMove = input()
-formatMoveInput()
-
-while playerMove not in game.keys():
-    print('Pick a valid move!')
-    playerMove = input()
-    formatMoveInput()
-
-while game[playerMove] == 'X' or game[playerMove] == 'O':
-    print('Pick a different position!')
-    playerMove = input()
-    formatMoveInput()
+phoneNumRegex = re.compile(r'(\d\d\d)-(\d\d\d-\d\d\d\d)')
+mo = phoneNumRegex.search('My number is 415-555-4242')
+print(mo.group())

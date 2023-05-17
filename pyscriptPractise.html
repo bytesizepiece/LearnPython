@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pyscriptPractise</title>
+    <link rel="stylesheet" href="pyscriptPractise.css">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+    <script> src="pyscriptPractise.js"</script>
+</head>
+<body>
+    
+
+<py-config>
+    plugins = [
+        "https://pyscript.net/latest/plugins/python/py_tutor.py"
+        ]
+</py-config>
+
+<h1>Date and Time Checker</h1>
+
+<div class="text">
+    <section class="pyscript">
+        <p> Hello world! <br>
+        This is the current date and time, as computed by Python:
+        </p>
+    <py-script>
+        from datetime import datetime
+        now = datetime.now()
+        display(now.strftime("%m/%d/%Y, %H:%M:%S"))
+
+        name = 'john'
+    </py-script>
+</section>
+</div>
+
+
+<div class="outputText">
+    <section class="pyscript">
+    <p>hello?</p>
+        <py-script>
+            display(name)
+        </py-script>  
+    </section>
+</div>
+
+
+<div class="qAndA">
+
+<div class="left">
+<p>left</p>
+<br>
+<py-script>
+display('1')
+</py-script>    
+</div>
+
+<div class="right">
+<p>right</p>
+</div>
+
+</div>
+
+
+</body>
+</html>
